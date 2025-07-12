@@ -14,6 +14,9 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.simplenoteapp.presentation.components.NoteCard
 
+// list of notes in a grid.
+// Supports search and navigation to details.
+
 @Composable
 fun NoteListScreen(nav: NavController, viewModel: NoteViewModel) {
 

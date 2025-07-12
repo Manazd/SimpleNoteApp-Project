@@ -9,6 +9,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 
+// UI for user registration.
+// calls register on ViewModel.
+
 @Composable
 fun RegisterScreen(navController: NavController, viewModel: AuthViewModel) {
     val state by viewModel.authState.collectAsState()

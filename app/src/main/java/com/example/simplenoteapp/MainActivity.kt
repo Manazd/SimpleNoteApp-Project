@@ -3,10 +3,11 @@ package com.example.simplenoteapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.navigation.NavGraph
+import androidx.compose.foundation.layout.padding
+import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
-import com.example.simplenoteapp.ui.theme.SimpleNoteTheme
 import com.example.simplenoteapp.navigation.NavGraph
+import com.example.simplenoteapp.ui.theme.SimpleNoteTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,7 +15,13 @@ class MainActivity : ComponentActivity() {
         setContent {
             SimpleNoteTheme {
                 val navController = rememberNavController()
-                NavGraph(navController = navController)
+
+                androidx.compose.material3.Scaffold { innerPadding ->
+                    NavGraph(
+                        navController = navController,
+                        modifier = Modifier.padding(innerPadding)
+                    )
+                }
             }
         }
     }

@@ -13,6 +13,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.example.simplenoteapp.domain.model.Note
 
+// clickable visual card
+// previews a note’s title and content
+
 @Composable
 fun NoteCard(note: Note, onClick: () -> Unit) {
     Card(

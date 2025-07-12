@@ -17,6 +17,9 @@ import androidx.navigation.NavController
 import com.example.simplenoteapp.utils.TokenManager
 import kotlinx.coroutines.launch
 
+// user profile.
+// logout and navigation to change password.
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SettingsScreen(navController: NavController, app: Application) {

@@ -8,6 +8,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 
+// Takes credentials and triggers login in ViewModel.
+
 @Composable
 fun LoginScreen(navController: NavController, viewModel: AuthViewModel) {
     val context = LocalContext.current

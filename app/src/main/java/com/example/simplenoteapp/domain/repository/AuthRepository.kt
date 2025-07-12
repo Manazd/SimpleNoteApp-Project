@@ -8,7 +8,9 @@ import com.example.simplenoteapp.utils.TokenManager
 
 class AuthRepository(private val context: Context) {
 
+    // login request to backend
     suspend fun login(email: String, password: String): AuthResponse {
+        // call backend with authApi
         val response = RetrofitInstance.authApi.login(
             AuthRequest(email = email, password = password)
         )

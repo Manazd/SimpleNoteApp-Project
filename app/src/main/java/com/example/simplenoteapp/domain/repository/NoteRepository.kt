@@ -6,6 +6,9 @@ import com.example.simplenoteapp.data.remote.model.NoteDto
 import com.example.simplenoteapp.domain.model.Note
 import com.example.simplenoteapp.utils.TokenManager
 
+// Manage notes by calling backend APIs.
+// Converts Data Transfer Object to domain model.
+
 class NoteRepository(private val context: Context) {
 
     private fun dtoToDomain(dto: NoteDto) = Note(

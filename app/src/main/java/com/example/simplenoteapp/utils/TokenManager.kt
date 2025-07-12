@@ -8,6 +8,8 @@ import kotlinx.coroutines.flow.first
 
 private val Context.dataStore by preferencesDataStore(name = "user_prefs")
 
+// Utility object to securely save and retrieve access token using DataStore.
+
 object TokenManager {
     private val ACCESS_TOKEN = stringPreferencesKey("access_token")
 

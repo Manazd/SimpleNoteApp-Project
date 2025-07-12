@@ -3,6 +3,7 @@ package com.example.simplenoteapp.navigation
 import android.annotation.SuppressLint
 import android.app.Application
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -16,15 +17,20 @@ import com.example.simplenoteapp.presentation.note.NoteViewModel
 import com.example.simplenoteapp.presentation.settings.ChangePasswordScreen
 import com.example.simplenoteapp.presentation.settings.SettingsScreen
 
+// navigation graph between all screens (login, register, home, detail, settings).
+
 @SuppressLint("ViewModelConstructorInComposable")
 @Composable
-fun NavGraph(navController: NavHostController) {
+fun NavGraph(navController: NavHostController, modifier: Modifier = Modifier) {
     val ctx = LocalContext.current
     val authVm = AuthViewModel(ctx.applicationContext as Application)
     val noteVm = NoteViewModel(ctx.applicationContext as Application)
 
-    NavHost(navController, startDestination = "login") {
-
+    NavHost(
+        navController = navController,
+        startDestination = "login",
+        modifier = modifier
+    ) {
         composable("login")    { LoginScreen(navController, authVm) }
         composable("register") { RegisterScreen(navController, authVm) }
 
@@ -39,12 +45,9 @@ fun NavGraph(navController: NavHostController) {
             SettingsScreen(navController, ctx.applicationContext as Application)
         }
 
-        composable("settings") {
-            SettingsScreen(navController, ctx.applicationContext as Application)
-        }
         composable("change_password") {
             ChangePasswordScreen(navController, ctx.applicationContext as Application)
         }
-
     }
 }
+

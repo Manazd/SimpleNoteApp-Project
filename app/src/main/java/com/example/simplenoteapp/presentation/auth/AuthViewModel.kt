@@ -8,6 +8,8 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
+// Handle login and register logic using AuthRepository.
+
 class AuthViewModel(app: Application) : AndroidViewModel(app) {
 
     private val repository = AuthRepository(app.applicationContext)

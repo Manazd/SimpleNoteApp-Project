@@ -3,6 +3,9 @@ package com.example.simplenoteapp.data.local
 import androidx.room.*
 import kotlinx.coroutines.flow.Flow
 
+// Data Access Object
+// Room database setup for offline-first support.
+
 @Dao
 interface NoteDao {
     @Query("SELECT * FROM notes ORDER BY timestamp DESC")
